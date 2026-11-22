@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api, adminToken } from '../../services/api'
 import AdminLogin from './AdminLogin'
-import OrdersTab from './Orderstab'
+import OrdersTab from './Orders'
 import MenuTab from './MenuTab'
 import SettingsTab from './SettingsTab'
 import { inr } from '../../utils/format'
