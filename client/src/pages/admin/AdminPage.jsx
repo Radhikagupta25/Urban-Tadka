@@ -10,7 +10,7 @@ function Overview() {
     const [s, setS] = useState(null)
     useEffect(() => { const load = () => api.admin.stats().then(setS).catch(() => { }); load(); const t = setInterval(load, 30000); return () => clearInterval(t) }, [])
     if (!s) return <p>Loading…</p>
-    const cards = [['Orders today', s.ordersToday], ['Pending / active', s.pending], ['Completed', s.completed], ['Cancelled', s.cancelled], ['All orders', s.total], ['Revenue today', inr(s.revenueToday)], ['Revenue (all time)', inr(s.revenue)]]
+    const cards = [['Orders todayyy', s.ordersToday], ['Pending / active', s.pending], ['Completed', s.completed], ['Cancelled', s.cancelled], ['All orders', s.total], ['Revenue today', inr(s.revenueToday)], ['Revenue (all time)', inr(s.revenue)]]
     return (
         <div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{cards.map(([l, v]) => <div key={l} className="border-2 border-ink bg-cream p-5"><p className="kicker text-ink/55">{l}</p><p className="display mt-2 text-5xl">{v}</p></div>)}</div>
