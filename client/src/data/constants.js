@@ -1,0 +1,2 @@
+export const CATEGORIES = ['Starters', 'North Indian', 'Biryani', 'Street Food', 'Beverages', 'Desserts']
+export const ORDER_STATUSES = ['Received', 'Confirmed', 'Preparing', 'Ready', 'Out for Delivery', 'Delivered', 'Cancelled']

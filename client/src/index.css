@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-cream font-sans text-ink antialiased;
+    }
+
+    section[id] {
+        scroll-margin-top: 4.5rem;
+    }
+
+    :focus-visible {
+        outline: 3px solid #E4572E;
+        outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        * {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer components {
+    .display {
+        @apply font-display uppercase leading-[0.9] tracking-tight;
+    }
+
+    .kicker {
+        @apply text-xs font-bold uppercase tracking-[0.25em];
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .btn-mustard {
+        @apply bg-mustard text-ink hover:bg-ink hover:text-mustard;
+    }
+
+    .btn-ink {
+        @apply bg-ink text-cream hover:bg-mustard hover:text-ink;
+    }
+
+    .btn-line {
+        @apply bg-transparent text-ink hover:bg-ink hover:text-cream;
+    }
+
+    .btn-line-light {
+        @apply border-cream bg-transparent text-cream hover:bg-cream hover:text-ink;
+    }
+
+    .field {
+        @apply w-full border-2 border-ink bg-cream px-4 py-3 text-ink placeholder:text-ink/40 focus:border-ember focus:outline-none;
+    }
+
+    .label {
+        @apply mb-1.5 block text-xs font-bold uppercase tracking-[0.18em];
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.marquee-track {
+    animation: marquee 35s linear infinite;
+}
